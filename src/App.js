@@ -1,25 +1,43 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
+import { Dashboard, Login, Error } from './pages';
+import { auth } from './firebase/firebase.utils';
+import { Switch, Route } from 'react-router-dom';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  constructor() {
+    super();
+
+    this.state = {
+      currentUser: null,
+    };
+  }
+
+  UnsubscribeFromAuth = null;
+
+  componentDidMount() {
+    this.UnsubscribeFromAuth = auth.onAuthStateChanged(async (userAuth) => {
+      if (userAuth) {
+        this.setState({ currentUser: userAuth });
+      }
+    });
+  }
+
+  componentWillUnmount() {
+    this.UnsubscribeFromAuth();
+  }
+
+  render() {
+    return auth.currentUser ? (
+      <div>
+        <Switch>
+          <Route exact path="/" component={Dashboard} />
+          <Route exact path="*" component={Error} />
+        </Switch>
+      </div>
+    ) : (
+      <Login />
+    );
+  }
 }
 
 export default App;

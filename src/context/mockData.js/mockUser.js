@@ -1,0 +1,38 @@
+const mockUser = {
+  login: 'apoorvdwi',
+  id: 56197821,
+  node_id: 'MDQ6VXNlcjU2MTk3ODIx',
+  avatar_url: 'https://avatars3.githubusercontent.com/u/56197821?v=4',
+  gravatar_id: '',
+  url: 'https://api.github.com/users/apoorvdwi',
+  html_url: 'https://github.com/apoorvdwi',
+  followers_url: 'https://api.github.com/users/apoorvdwi/followers',
+  following_url:
+    'https://api.github.com/users/apoorvdwi/following{/other_user}',
+  gists_url: 'https://api.github.com/users/apoorvdwi/gists{/gist_id}',
+  starred_url: 'https://api.github.com/users/apoorvdwi/starred{/owner}{/repo}',
+  subscriptions_url: 'https://api.github.com/users/apoorvdwi/subscriptions',
+  organizations_url: 'https://api.github.com/users/apoorvdwi/orgs',
+  repos_url: 'https://api.github.com/users/apoorvdwi/repos',
+  events_url: 'https://api.github.com/users/apoorvdwi/events{/privacy}',
+  received_events_url: 'https://api.github.com/users/apoorvdwi/received_events',
+  type: 'User',
+  site_admin: false,
+  name: 'Apoorv Dwivedi',
+  company: null,
+  blog: 'https://in.linkedin.com/in/apoorv-dwivedi-84a42a174',
+  location: 'New Delhi, India',
+  email: null,
+  hireable: true,
+  bio:
+    'Btech sophomore from Maharaja Agrasen Institute Of Technology\r\nFull Stack Web Developer (MERN) | ML and Data Science practitioner | AI enthusiast',
+  twitter_username: null,
+  public_repos: 28,
+  public_gists: 0,
+  followers: 5,
+  following: 1,
+  created_at: '2019-10-05T14:33:08Z',
+  updated_at: '2021-01-05T16:22:10Z',
+};
+
+export default mockUser;
